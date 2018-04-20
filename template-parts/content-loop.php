@@ -1,30 +1,26 @@
 <?php
 /**
- * The default template for displaying page content
+ * The default template for displaying content
  *
+ * Used for both single and index/archive/search.
  *
  * @package FoundationPress
  * @since FoundationPress 1.0.0
  */
 
 ?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php if ( ! has_post_thumbnail() ) : ?>
-        <header>
-            <h1 class="entry-title"><?php the_title(); ?></h1>
-
-			<?php if ( $description = vibrantlife_field_helpers()->fields->get_field( 'description' ) ) : ?>
-                <div class="entry-description">
-					<?php echo esc_attr( $description ); ?>
-                </div>
-			<?php endif; ?>
-        </header>
-	<?php endif; ?>
+    <header>
+	    <?php get_template_part( 'template-parts/featured-image' ); ?>
+		<?php foundationpress_entry_meta(); ?>
+    </header>
 
     <div class="entry-content">
-		<?php the_content(); ?>
+		<?php the_excerpt(); ?>
 		<?php edit_post_link( __( '(Edit)', 'foundationpress' ), '<span class="edit-link">', '</span>' ); ?>
+        <a href="<?php the_permalink(); ?>" class="button large" aria-labelledby="post-title-<?php the_ID(); ?>">
+            Read More
+        </a>
     </div>
     <footer>
 		<?php

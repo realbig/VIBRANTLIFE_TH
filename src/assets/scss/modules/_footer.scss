@@ -2,10 +2,33 @@
   @include xy-grid-container;
   border-top: 1px solid $medium-gray;
   margin-top: rem-calc(60);
+
+  @include breakpoint(small only) {
+    text-align: center;
+  }
+
+  .footer-meta {
+    @include xy-cell(12);
+    margin-bottom: 1rem;
+  }
+
+  .footer-rbm-link {
+    &:after {
+      content: '';
+      display: inline-block;
+      width: 23px;
+      height: 24px;
+      background: url("../images/rbm-logo-footer.png");
+      background-size: 23px 24px;
+      margin-left: 0.5em;
+      vertical-align: middle;
+    }
+  }
 }
 
 .footer-grid {
   @include xy-grid;
+  align-items: center;
   padding: rem-calc(30) 0;
 
   section {
@@ -19,5 +42,23 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
+  }
+
+  .menu {
+    @include breakpoint(small only) {
+      justify-content: center;
+    }
+
+    @include breakpoint(medium) {
+      justify-content: flex-end;
+    }
+  }
+
+  .widget_text {
+    p {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 }

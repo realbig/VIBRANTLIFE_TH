@@ -22,17 +22,43 @@ register_nav_menus(
  */
 if ( ! function_exists( 'foundationpress_top_bar_r' ) ) {
 	function foundationpress_top_bar_r() {
-		wp_nav_menu(
-			array(
-				'container'      => false,
-				'menu_class'     => 'dropdown menu',
-				'items_wrap'     => '<ul id="%1$s" class="%2$s desktop-menu" data-dropdown-menu>%3$s</ul>',
-				'theme_location' => 'top-bar-r',
-				'depth'          => 3,
-				'fallback_cb'    => false,
-				'walker'         => new Foundationpress_Top_Bar_Walker(),
-			)
-		);
+
+		?>
+		<div class="nav-container">
+            <div class="nav-section">
+                <a href="tel:734-847-3217" class="nav-icon nav-phone">
+                    <span class="fa fa-phone"></span>&nbsp;734-847-3217
+                </a>
+            </div>
+
+			<div class="nav-section">
+
+				<div class="site-search">
+					<?php get_search_form(); ?>
+				</div>
+
+				<a href="https://facebook.com/napoleonbeesupply/" aria-label="Facebook" target="_blank" title="Facebook" class="nav-icon facebook-link">
+					<span class="footer-social-icon fa fa-facebook"></span>
+				</a>
+
+				<a href="https://twitter.com/napoleonbeesupply/" aria-label="Twitter" target="_blank" title="Twitter" class="nav-icon twitter-link">
+					<span class="footer-social-icon fa fa-twitter"></span>
+				</a>
+			</div>
+
+			<div class="nav-section">
+				<?php wp_nav_menu( array(
+					'container'      => false,
+					'menu_class'     => 'dropdown menu',
+					'items_wrap'     => "<ul id=\"%1\$s\" class=\"%2\$s desktop-menu\" data-dropdown-menu>%3\$s</ul>",
+					'theme_location' => 'top-bar-r',
+					'depth'          => 3,
+					'fallback_cb'    => false,
+					'walker'         => new Foundationpress_Top_Bar_Walker(),
+				) ); ?>
+			</div>
+		</div>
+		<?php
 	}
 }
 

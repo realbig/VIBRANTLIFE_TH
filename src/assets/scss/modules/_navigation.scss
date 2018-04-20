@@ -7,6 +7,7 @@
 .desktop-menu,
 .site-navigation .top-bar-left {
   @include show-for(medium);
+  padding-right: 1rem;
 }
 
 // Site title
@@ -17,6 +18,28 @@
 // Mobile menu
 .mobile-menu {
   display: none; // prevents repaint caused by JS hiding menu onload
+}
+
+.title-bar-left {
+  position: relative;
+
+  @include breakpoint(small only) {
+    text-align: center;
+  }
+
+  .menu-icon {
+    @include hamburger(
+            $width: 40px,
+            $height: 40px,
+            $weight: 8px,
+            $color: $white
+    );
+
+    position: absolute;
+    left: map-get($grid-column-gutter, small);
+    top: 50%;
+    margin-top: -20px;
+  }
 }
 
 .off-canvas {
@@ -31,14 +54,16 @@
     }
   }
 
-  .menu .active > a { background-color: #ccc; }
+  .menu .active > a {
+    background-color: #ccc;
+  }
 
 }
 
 .title-bar-title {
   a {
     font-size: 1rem;
-    color: #B9B9B9;
+    color: $white;
   }
 }
 
@@ -46,7 +71,7 @@
 .mobile-off-canvas-menu {
 
   .menu .is-active > a {
-    background-color: lighten($dark-nav-color, 5%);
+    background-color: lighten($primary-color, 5%);
   }
 }
 
@@ -54,15 +79,80 @@
 
 .top-bar {
 
+  .nav-container {
+    height: 100%;
+
+    @include breakpoint(medium) {
+      float: right;
+      text-align: right;
+    }
+
+    .nav-section {
+      line-height: 45px;
+      color: $white;
+
+      @include breakpoint(small only) {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+
+        &:not(:last-child) {
+          margin-bottom: 1rem;
+        }
+      }
+
+      @include breakpoint(medium) {
+        padding-right: 1rem;
+      }
+
+      .nav-icon {
+        display: inline-block;
+        border: 1px solid mix($primary-color, $white, 85%);
+        padding: 0 0.5rem;
+        height: 1.8rem;
+        line-height: 1.8rem;
+        transition: border-color 300ms;
+
+        &:hover {
+          border: 1px solid mix($primary-color, $white, 60%);
+        }
+      }
+
+      .nav-phone {
+        @include breakpoint(small only) {
+          font-size: 1.5em;
+          padding: 0.5em;
+          height: auto;
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  a {
+    color: inherit;
+  }
+
+  .site-search {
+    display: inline-block;
+
+    .search-form {
+      @include breakpoint(small only) {
+        width: 16em;
+      }
+    }
+  }
+
   .top-bar-title a {
     font-size: 1rem;
-    color: #B9B9B9;
+    color: $white;
     padding-left: 1rem;
     line-height: 1.8;
   }
 
   .menu a {
-    color: #e6e6e6;
+    color: $white;
     padding-top: 0;
     padding-bottom: 0;
     font-weight: bold;
@@ -70,25 +160,42 @@
     line-height: 1;
 
     &:hover:not(.button) {
-      background-color: #42525D;
+      background-color: $secondary-color;
     }
   }
 
-  .menu .active > a { background-color: #ccc; }
+  .menu {
+    justify-content: flex-end;
+    padding: 0;
+  }
 
-  .menu>li:not(.menu-text)>a { padding: 1rem; }
-  .menu li:not(:last-child) { border-right: 1px solid #4e4e4e; }
+  .menu .is-active > a,
+  .current-menu-ancestor,
+  .current-menu-item {
+    background-color: $secondary-color;
+  }
 
-  .dropdown.menu .submenu { border: 0; }
-  .dropdown.menu .has-submenu.is-down-arrow a { padding-right: 1rem; }
-  .dropdown.menu .has-submenu.is-down-arrow > a::after { border: 0; }
-  .dropdown.menu:first-child > li.is-dropdown-submenu-parent > a::after { display: none; }
+  .menu > li:not(.menu-text) > a {
+    padding: 1rem;
+  }
+
+  .dropdown.menu .submenu {
+    border: 0;
+    z-index: 20;
+  }
+  .dropdown.menu .has-submenu.is-down-arrow a {
+    padding-right: 1rem;
+  }
+  .dropdown.menu .has-submenu.is-down-arrow > a::after {
+    border: 0;
+  }
+  .dropdown.menu:first-child > li.is-dropdown-submenu-parent > a::after {
+    display: none;
+  }
 }
 
 .site-navigation {
-  @include breakpoint(small only) {
-    padding: 0; // prevents container visibility on small screens
-  }
+  padding: 0.5em;
 }
 
 // WP post navigation
@@ -97,9 +204,9 @@
 }
 
 .nav-previous {
-  float:left;
+  float: left;
 }
 
 .nav-next {
-  float:right;
+  float: right;
 }

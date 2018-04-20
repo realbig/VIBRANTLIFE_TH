@@ -12,13 +12,19 @@
 <footer class="footer">
     <div class="footer-container">
         <div class="footer-grid">
-            <?php dynamic_sidebar( 'footer-widgets' ); ?>
+			<?php dynamic_sidebar( 'footer-widgets' ); ?>
+        </div>
+
+        <div class="footer-meta">
+            Built by <a href="https://realbigmarketing.com" target="_blank" rel="nofollow" class="footer-rbm-link">
+                Real Big Marketing
+            </a>
         </div>
     </div>
 </footer>
 
 <?php if ( get_theme_mod( 'wpt_mobile_menu_layout' ) === 'offcanvas' ) : ?>
-	</div><!-- Close off-canvas content -->
+    </div><!-- Close off-canvas content -->
 <?php endif; ?>
 
 <?php wp_footer(); ?>

@@ -1,6 +1,5 @@
 @charset 'utf-8';
 
-
 @import 'settings';
 @import 'foundation';
 @import 'motion-ui';
@@ -60,7 +59,6 @@
 
 // Global
 @import "global/accessibility";
-@import "global/colors";
 @import "global/wp-admin";
 @import "global/wp-overrides";
 
@@ -68,6 +66,7 @@
 @import "modules/navigation";
 @import "modules/content";
 @import "modules/footer";
+@import "modules/searchform";
 @import "modules/editor-style";
 
 // Components
@@ -80,3 +79,5 @@
 // Templates
 @import "templates/front";
 @import "templates/kitchen-sink";
+@import "templates/template-resources";
+@import "templates/template-contact";

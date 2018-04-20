@@ -1,0 +1,46 @@
+body.page-template-resources {
+  .resource-list {
+    list-style: none;
+    margin-left: 0;
+
+    li {
+      @include xy-grid;
+      padding: 0 0 1rem 0;
+      margin-bottom: 1rem;
+      border-bottom: 1px dashed $medium-gray;
+
+      &:before {
+        display: none;
+      }
+    }
+
+    .resource-item-image {
+      @include breakpoint(small) {
+        @include xy-cell(4);
+      }
+
+      @include breakpoint(medium) {
+        @include xy-cell(2);
+      }
+    }
+
+    .resource-item-content {
+      @include breakpoint(small) {
+        @include xy-cell(8);
+      }
+
+      @include breakpoint(medium) {
+        @include xy-cell(10);
+      }
+    }
+
+    .resource-item-title {
+      font-weight: bold;
+      color: $primary-color;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+}

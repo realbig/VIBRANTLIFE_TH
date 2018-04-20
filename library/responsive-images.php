@@ -58,7 +58,7 @@ function foundationpress_adjust_image_sizes_attr( $sizes, $size ) {
 
 	return $sizes;
 }
-add_filter( 'wp_calculate_image_sizes', 'foundationpress_adjust_image_sizes_attr', 10, 2 );
+//add_filter( 'wp_calculate_image_sizes', 'foundationpress_adjust_image_sizes_attr', 10, 2 );
 
 // Remove inline width and height attributes for post thumbnails
 function remove_thumbnail_dimensions( $html, $post_id, $post_image_id ) {
@@ -68,3 +68,15 @@ function remove_thumbnail_dimensions( $html, $post_id, $post_image_id ) {
 	return $html;
 }
 add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10, 3 );
+
+function vibrantlife_get_featured_interchange( $attachment_ID ) {
+
+	$images = array(
+		'featured-small' => wp_get_attachment_url( $attachment_ID ),
+		'featured-medium' => wp_get_attachment_url( $attachment_ID ),
+		'featured-large' => wp_get_attachment_url( $attachment_ID ),
+		'featured-xlarge' => wp_get_attachment_url( $attachment_ID ),
+	);
+
+	return "data-interchange=\"[{$images['featured-small']}, small], [{$images['featured-medium']}, medium], [{$images['featured-large']}, large], [{$images['featured-xlarge']}, xlarge]\"";
+}

@@ -1,0 +1,49 @@
+body.page-template-contact {
+  .main-wrap {
+    margin-top: 0;
+  }
+
+  .main-content {
+    margin: 0;
+    width: 100%;
+
+    .contact-upper {
+      @include xy-grid;
+      @include xy-grid-container;
+
+      .entry-content {
+        @include xy-cell(12);
+      }
+    }
+
+    .contact-lower {
+      @include xy-grid;
+      @include xy-grid-container($width: map_get($breakpoints, xxlarge));
+
+      .contact-container-left {
+        @include xy-cell(8);
+      }
+
+      .contact-container-right {
+        @include xy-cell(4);
+      }
+
+      .contact-widget {
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+        border-bottom: 8px solid $secondary-color;
+        font-size: 1.2rem;
+        background: rgba($secondary-color, 0.2);
+        padding: 1em;
+
+        h2 {
+          color: inherit;
+        }
+
+        p {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

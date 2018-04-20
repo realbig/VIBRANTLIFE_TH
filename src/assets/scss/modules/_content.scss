@@ -2,6 +2,37 @@
   @include xy-grid-container;
 }
 
+.featured-hero {
+  position: relative;
+  color: $white;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(#000, 0.5);
+    z-index: 1;
+  }
+
+  .entry-title-content {
+    @include xy-grid-container($width: map-get($breakpoints, large));
+    position: absolute;
+    text-align: center;
+    position: relative;
+    text-shadow: 2px 2px 5px rgba(#000, 0.5);
+    top: 50%;
+    z-index: 10;
+    transform: translateY(-50%);
+
+    .entry-description {
+      font-size: 1.2em;
+    }
+  }
+}
+
 .main-grid {
   @include xy-grid();
   margin-top: 1rem;
@@ -13,14 +44,22 @@
   &.sidebar-left {
     // Place the sidebar below main content on small screens ...
     @include breakpoint(small) {
-      .main-content { order: 1; }
-      .sidebar { order: 2; }
+      .main-content {
+        order: 1;
+      }
+      .sidebar {
+        order: 2;
+      }
     }
 
     // ... and to the left on medium-up screens, when using the sidebar-left template
     @include breakpoint(medium) {
-      .main-content { order: 2; }
-      .sidebar { order: 1; }
+      .main-content {
+        order: 2;
+      }
+      .sidebar {
+        order: 1;
+      }
     }
   }
 
@@ -38,6 +77,25 @@
     @include breakpoint(medium) {
       @include xy-cell(8);
     }
+
+    h2, h3, h4, h5, h6 {
+      color: $primary-color;
+      line-height: 1.2;
+    }
+
+    ul {
+      overflow: hidden;
+      list-style: none;
+
+      li {
+        padding-left: 1em;
+
+        &:before {
+          content: '\2022';
+          margin-right: 0.8em;
+        }
+      }
+    }
   }
 
   .sidebar {
@@ -50,5 +108,22 @@
       margin-top: 1rem;
     }
 
+    .widget {
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 8px solid $secondary-color;
+    }
+
+    .widget_text {
+      font-size: 1.2rem;
+      background: rgba($secondary-color, 0.2);
+      padding: 1em;
+
+      p {
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
   }
 }
