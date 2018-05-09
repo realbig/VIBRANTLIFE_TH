@@ -1,0 +1,31 @@
+.off-canvas-content {
+  position: relative;
+}
+
+.site-header {
+  background: #fff;
+
+  @include breakpoint(medium) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background: rgba(#fff, 0.8);
+  }
+
+  .custom-logo-link {
+    display: block;
+    max-width: 160px;
+
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+body.no-featured-image {
+  .site-header {
+    position: relative !important;
+  }
+}

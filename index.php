@@ -15,6 +15,13 @@
  * @since FoundationPress 1.0.0
  */
 
+add_filter( 'body_class', function ( $classes ) {
+
+    $classes[] = 'no-featured-image';
+
+    return $classes;
+});
+
 get_header(); ?>
 
     <div class="main-container">

@@ -16,7 +16,7 @@ body.page-template-front {
     @include breakpoint(small) {
       background-size: cover;
       background-position: bottom center;
-      padding: rem-calc(65%) 0;
+      padding: 12rem 0;
       margin: 0 0 rem-calc(32);
       height: auto;
       position: relative;
@@ -30,7 +30,8 @@ body.page-template-front {
     @include breakpoint(medium) {
       background-size: cover;
       background-position: bottom center;
-      height: rem-calc(685);
+      height: rem-calc(720);
+      height: 90vh;
       margin: 0 0 rem-calc(72);
 
       &:before {
@@ -59,7 +60,7 @@ body.page-template-front {
     }
 
     h1 {
-      color: #fff;
+      color: $white;
       font-weight: bold;
       font-size: 2.2rem;
 
@@ -73,7 +74,7 @@ body.page-template-front {
     }
 
     h4 {
-      color: #fefefe;
+      color: $white;
       font-weight: 300;
       font-size: 1.5rem;
     }
