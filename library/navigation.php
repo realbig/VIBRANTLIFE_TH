@@ -26,8 +26,8 @@ if ( ! function_exists( 'foundationpress_top_bar_r' ) ) {
 		?>
 		<div class="nav-container">
             <div class="nav-section">
-                <a href="tel:734-847-3217" class="nav-icon nav-phone">
-                    <span class="fa fa-phone"></span>&nbsp;734-847-3217
+                <a href="tel:7345060630" class="nav-icon nav-phone">
+                    <span class="fa fa-phone"></span>&nbsp;(734) 506-0630
                 </a>
             </div>
 
