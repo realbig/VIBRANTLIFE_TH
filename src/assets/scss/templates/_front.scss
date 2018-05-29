@@ -16,7 +16,7 @@ body.page-template-front {
     @include breakpoint(small) {
       background-size: cover;
       background-position: bottom center;
-      padding: 12rem 0;
+      padding: 6rem 0;
       margin: 0 0 rem-calc(32);
       height: auto;
       position: relative;
@@ -28,16 +28,7 @@ body.page-template-front {
     }
 
     @include breakpoint(medium) {
-      background-size: cover;
-      background-position: bottom center;
-      height: rem-calc(720);
-      height: 90vh;
-      margin: 0 0 rem-calc(72);
-
-      &:before {
-        width: 70%;
-        background: linear-gradient(to right, rgba(#000, 0.7) 50%, rgba(#000, 0.5) 80%, rgba(#000, 0) 100%);
-      }
+      padding: 12rem 0;
     }
 
     .marketing {
@@ -55,7 +46,7 @@ body.page-template-front {
 
       @include breakpoint(medium) {
         @include xy-cell(9);
-        padding-top: 6rem;
+        padding-top: calc(6rem + 72px);
       }
     }
 
@@ -77,6 +68,29 @@ body.page-template-front {
       color: $white;
       font-weight: 300;
       font-size: 1.5rem;
+    }
+
+    .flourish {
+      position: absolute;
+      bottom: 0;
+      opacity: 0.3;
+      width: 50%;
+
+      @include breakpoint(medium) {
+        width: 30%;
+      }
+    }
+
+    .flourish-a {
+      left: 5%;
+
+      img {
+        transform: scaleX(-1);
+      }
+    }
+
+    .flourish-b{
+      right: 5%;
     }
   }
 

@@ -25,11 +25,38 @@
     text-shadow: 2px 2px 5px rgba(#000, 0.5);
     top: 60%;
     z-index: 10;
-    transform: translateY(-50%);
+    transform: translateY(calc(-50% + 72px));
+
+    @include breakpoint(small) {
+      transform: translateY(-50%);
+    }
 
     .entry-description {
       font-size: 1.2em;
     }
+  }
+
+  .flourish {
+    position: absolute;
+    bottom: 0;
+    opacity: 0.3;
+    width: 50%;
+
+    @include breakpoint(medium) {
+      width: 30%;
+    }
+  }
+
+  .flourish-a {
+    left: 5%;
+
+    img {
+      transform: scaleX(-1);
+    }
+  }
+
+  .flourish-b{
+    right: 5%;
   }
 }
 
@@ -111,18 +138,24 @@
     .widget {
       margin-bottom: 2rem;
       padding-bottom: 2rem;
-      border-bottom: 8px solid $secondary-color;
+      border-bottom: 8px solid #AeAE1B;
     }
 
     .widget_text {
       font-size: 1.2rem;
-      background: rgba($secondary-color, 0.2);
+      background: #B13212;
+      color: $white;
       padding: 1em;
 
       p {
         &:last-child {
           margin-bottom: 0;
         }
+      }
+
+      a {
+        color: inherit;
+        text-decoration: underline;
       }
     }
   }

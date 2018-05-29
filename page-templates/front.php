@@ -41,9 +41,12 @@ if ( $hero_page_link ) {
             </div>
         </div>
 
-        <span class="honeycomb-overlay honeycomb-overlay-1 overlay-a"></span>
-        <span class="honeycomb-overlay honeycomb-overlay-2 overlay-b"></span>
-        <span class="honeycomb-overlay honeycomb-overlay-1 overlay-c"></span>
+        <span class="flourish flourish-a">
+            <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/flourish-a.png" alt="design-flourish" />
+        </span>
+        <span class="flourish flourish-b">
+            <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/flourish-b.png" alt="design-flourish" />
+        </span>
     </header>
 
 <?php do_action( 'foundationpress_before_content' ); ?>

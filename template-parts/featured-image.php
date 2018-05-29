@@ -16,5 +16,12 @@ if ( has_post_thumbnail( $post->ID ) ) : ?>
                 </div>
 			<?php endif; ?>
         </div>
+
+        <span class="flourish flourish-a">
+            <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/flourish-a.png" alt="design-flourish" />
+        </span>
+        <span class="flourish flourish-b">
+            <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/flourish-b.png" alt="design-flourish" />
+        </span>
     </header>
 <?php endif;
