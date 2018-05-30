@@ -7,7 +7,7 @@
   color: $white;
 
   &:before {
-    content: '';
+    //content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -22,7 +22,7 @@
     position: absolute;
     text-align: center;
     position: relative;
-    text-shadow: 2px 2px 5px rgba(#000, 0.5);
+    text-shadow: 2px 2px 5px rgba(#000, 1);
     top: 60%;
     z-index: 10;
     transform: translateY(-50%);
