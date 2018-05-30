@@ -111,10 +111,16 @@ body.page-template-front {
       @include xy-cell(12);
       margin-bottom: 2rem;
       padding-bottom: 2rem;
-      border-bottom: 8px solid $secondary-color;
+      border-bottom: 8px solid #AeAE1B;
       font-size: 1.2rem;
-      background: rgba($secondary-color, 0.2);
+      color: $white;
+      background: #B13212;
       padding: 1em;
+
+      a {
+        color: inherit;
+        text-decoration: underline;
+      }
 
       &.has-image {
         @include xy-grid;
