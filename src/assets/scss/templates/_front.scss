@@ -2,6 +2,7 @@ body.page-template-front {
   // Page header
   .off-canvas-content .front-hero {
     position: relative;
+    overflow: hidden;
 
     &:before {
       //content: '';
@@ -15,7 +16,7 @@ body.page-template-front {
 
     @include breakpoint(small) {
       background-size: cover;
-      background-position: bottom center;
+      background-position: center top;
       padding: 6rem 0;
       margin: 0 0 rem-calc(32);
       height: auto;
@@ -28,15 +29,22 @@ body.page-template-front {
     }
 
     @include breakpoint(medium) {
-      padding: 12rem 0;
+      padding: 8rem 0;
     }
 
     .marketing {
-      @include xy-grid-container(55rem);
       @include xy-grid;
 
       position: relative;
       z-index: 10;
+
+      @include breakpoint(large) {
+        @include xy-grid-container(55rem);
+      }
+
+      @include breakpoint(xlarge) {
+        @include xy-grid-container(65rem);
+      }
     }
 
     .tagline {
@@ -61,7 +69,7 @@ body.page-template-front {
       }
 
       @include breakpoint(large) {
-        font-size: 3.2rem;
+        font-size: 3rem;
       }
     }
 
@@ -76,25 +84,31 @@ body.page-template-front {
       position: absolute;
       bottom: 0;
       opacity: 0.3;
-      width: 50%;
+      width: 40%;
 
       @include breakpoint(medium) {
-        width: 30%;
+        width: 20%;
       }
     }
 
     .flourish-a {
-      left: 5%;
+      left: 1rem;
+      top: 0;
+
+      @include breakpoint(medium) {
+        left: 10rem;
+      }
+
+      @include breakpoint(large) {
+        left: 12rem;
+      }
 
       img {
-        transform: scaleX(-1);
+        transform: rotate(180deg);
       }
     }
-
-    .flourish-b{
-      right: 5%;
-    }
   }
+
 
   .intro {
     @include xy-grid-container;
@@ -111,18 +125,14 @@ body.page-template-front {
 
     .content-block {
       @include xy-cell(12);
+      position: relative;
       margin-bottom: 2rem;
       padding-bottom: 2rem;
-      border-bottom: 8px solid #AeAE1B;
       font-size: 1.2rem;
-      color: $white;
-      background: #B13212;
+      border-bottom: 8px solid $secondary-color;
+      background: rgba($secondary-color, 0.2);
       padding: 1em;
-
-      a {
-        color: inherit;
-        text-decoration: underline;
-      }
+      overflow: hidden;
 
       &.has-image {
         @include xy-grid;
@@ -144,6 +154,14 @@ body.page-template-front {
         &:last-child {
           margin-bottom: 0;
         }
+      }
+
+      .flourish {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 30%;
+        opacity: 0.3;
       }
     }
   }

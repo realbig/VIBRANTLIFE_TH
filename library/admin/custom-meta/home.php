@@ -59,7 +59,7 @@ function vibrantlife_mb_home_settings() {
 		);
 	}
 
-	vibrantlife_field_helpers()->fields->do_field_text( 'subhead', array(
+	vibrantlife_field_helpers()->fields->do_field_textarea( 'subhead', array(
 		'group'       => 'home',
 		'label'       => 'Hero Page Sub Header Text',
 		'input_class' => 'widefat',

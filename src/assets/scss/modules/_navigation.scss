@@ -26,6 +26,27 @@
   background-color: rgba(#fff, 0.8);
 }
 
+.site-header {
+  .menu-icon {
+    @include hamburger(
+            $width: 40px,
+            $height: 40px,
+            $weight: 8px,
+            $color: $primary-color
+    );
+  }
+}
+
+.top-bar-right {
+  .menu-icon {
+    display: none;
+
+    @include breakpoint(medium only) {
+      display: inline-block;
+    }
+  }
+}
+
 .title-bar-left {
   position: relative;
 
@@ -34,13 +55,6 @@
   }
 
   .menu-icon {
-    @include hamburger(
-            $width: 40px,
-            $height: 40px,
-            $weight: 8px,
-            $color: $primary-color
-    );
-
     position: absolute;
     left: map-get($grid-column-gutter, small);
     top: 50%;
@@ -174,6 +188,18 @@
 
   .desktop-menu {
     background: $primary-color;
+
+    .is-dropdown-submenu-parent {
+      a {
+        &:after {
+          display: none !important;
+        }
+      }
+    }
+
+    @include breakpoint(medium only) {
+      display: none;
+    }
   }
 
   .menu {
@@ -194,6 +220,7 @@
   .dropdown.menu .submenu {
     border: 0;
     z-index: 20;
+    text-align: left;
   }
   .dropdown.menu .has-submenu.is-down-arrow a {
     padding-right: 1rem;

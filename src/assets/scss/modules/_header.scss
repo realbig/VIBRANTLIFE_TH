@@ -5,15 +5,6 @@
 .site-header {
   background: #fff;
 
-  @include breakpoint(medium) {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 100;
-    background: transparent;
-  }
-
   .custom-logo-link {
     display: block;
     max-width: 160px;

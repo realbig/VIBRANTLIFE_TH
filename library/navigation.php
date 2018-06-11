@@ -47,6 +47,9 @@ if ( ! function_exists( 'foundationpress_top_bar_r' ) ) {
 			</div>
 
 			<div class="nav-section">
+                <button aria-label="<?php _e( 'Main Menu', 'foundationpress' ); ?>" class="menu-icon" type="button"
+                        data-toggle="<?php foundationpress_mobile_menu_id(); ?>"></button>
+
 				<?php wp_nav_menu( array(
 					'container'      => false,
 					'menu_class'     => 'dropdown menu',

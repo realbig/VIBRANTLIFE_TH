@@ -2,9 +2,14 @@
   @include xy-grid-container;
 }
 
+h2 {
+  font-style: italic;
+}
+
 .featured-hero {
   position: relative;
   color: $white;
+  overflow: hidden;
 
   &:before {
     //content: '';
@@ -138,13 +143,12 @@
     .widget {
       margin-bottom: 2rem;
       padding-bottom: 2rem;
-      border-bottom: 8px solid #AeAE1B;
+      border-bottom: 8px solid $secondary-color;
+      background: rgba($secondary-color, 0.2);
     }
 
     .widget_text {
       font-size: 1.2rem;
-      background: #B13212;
-      color: $white;
       padding: 1em;
 
       p {

@@ -30,7 +30,9 @@ if ( $hero_page_link ) {
         <div class="marketing">
             <div class="tagline">
                 <h1 class="header"><?php the_title(); ?></h1>
-                <h4 class="subheader"><?php echo vibrantlife_field_helpers()->fields->get_meta_field( 'subhead' ); ?></h4>
+                <h4 class="subheader">
+					<?php echo wpautop( vibrantlife_field_helpers()->fields->get_meta_field( 'subhead' ) ); ?>
+                </h4>
 
 				<?php if ( $hero_page_link ) : ?>
                     <a role="button" class="large button"
@@ -42,10 +44,8 @@ if ( $hero_page_link ) {
         </div>
 
         <span class="flourish flourish-a">
-            <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/flourish-a.png" alt="design-flourish" />
-        </span>
-        <span class="flourish flourish-b">
-            <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/flourish-b.png" alt="design-flourish" />
+            <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/flourish-a.png"
+                 alt="design-flourish"/>
         </span>
     </header>
 
@@ -83,18 +83,24 @@ if ( $hero_page_link ) {
 
 <?php if ( $content_blocks = vibrantlife_field_helpers()->fields->get_field( 'content_blocks' ) ) : ?>
     <section class="content-blocks">
-		<?php foreach ( $content_blocks as $content_block ) : ?>
+		<?php foreach ( $content_blocks as $i => $content_block ) : ?>
             <div class="content-block <?php echo $content_block['image'] ? 'has-image' : ''; ?>">
+
+                <span class="flourish flourish-<?php echo $i % 2 === 0 ? 'a' : 'b'; ?>">
+                    <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/flourish-<?php echo $i % 2 === 0 ? 'a' : 'b'; ?>.png"
+                         alt="design-flourish"/>
+                </span>
+
 				<?php if ( $content_block['image'] ) : ?>
                     <div class="content-block-image">
-						<?php echo wp_get_attachment_image( $content_block['image'], 'full'); ?>
+						<?php echo wp_get_attachment_image( $content_block['image'], 'full' ); ?>
                     </div>
 				<?php endif; ?>
 
                 <div class="content-block-content">
-                    <h3>
+                    <h2>
 						<?php echo $content_block['title']; ?>
-                    </h3>
+                    </h2>
 
 					<?php echo do_shortcode( wpautop( $content_block['content'] ) ); ?>
                 </div>
