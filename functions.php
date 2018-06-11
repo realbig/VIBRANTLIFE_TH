@@ -55,5 +55,7 @@ require_once( 'library/rbm-field-helpers.php' );
 
 require_once( 'library/admin/admin.php' );
 
+require_once( 'library/third-party.php' );
+
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
 // require_once( 'library/class-foundationpress-protocol-relative-theme-assets.php' );
