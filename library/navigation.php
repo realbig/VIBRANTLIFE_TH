@@ -37,13 +37,10 @@ if ( ! function_exists( 'foundationpress_top_bar_r' ) ) {
 					<?php get_search_form(); ?>
 				</div>
 
-				<a href="https://facebook.com/napoleonbeesupply/" aria-label="Facebook" target="_blank" title="Facebook" class="nav-icon facebook-link">
+				<a href="https://www.facebook.com/VLSuperiorTownship/" aria-label="Facebook" target="_blank" title="Facebook" class="nav-icon facebook-link">
 					<span class="footer-social-icon fa fa-facebook"></span>
 				</a>
-
-				<a href="https://twitter.com/napoleonbeesupply/" aria-label="Twitter" target="_blank" title="Twitter" class="nav-icon twitter-link">
-					<span class="footer-social-icon fa fa-twitter"></span>
-				</a>
+                
 			</div>
 
 			<div class="nav-section">
