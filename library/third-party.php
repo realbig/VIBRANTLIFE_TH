@@ -2,7 +2,7 @@
 /**
  * Third party scripts and tools.
  *
- * @since {{VERSION}}
+ * @since 1.0.1
  */
 
 defined( 'ABSPATH' ) || die();
@@ -15,7 +15,7 @@ add_action( 'wp_head', 'vibrantlife_google_tag_manager_pixel_code' );
 /**
  * Outputs the Google Tag Manager (A) code.
  *
- * @since {{VERSION}}
+ * @since 1.0.1
  * @access private
  */
 function vibrantlife_google_tag_manager_a_code() {
@@ -26,7 +26,7 @@ function vibrantlife_google_tag_manager_a_code() {
 /**
  * Outputs the Google Tag Manager (B) code.
  *
- * @since {{VERSION}}
+ * @since 1.0.1
  * @access private
  */
 function vibrantlife_google_tag_manager_b_code() {
@@ -37,7 +37,7 @@ function vibrantlife_google_tag_manager_b_code() {
 /**
  * Outputs the Google Tag Manager Pixel code.
  *
- * @since {{VERSION}}
+ * @since 1.0.1
  * @access private
  */
 function vibrantlife_google_tag_manager_pixel_code() {

@@ -22,7 +22,7 @@
 /**
  * Fires right when the body opens.
  *
- * @since {{VERSION}}
+ * @since 1.0.1
  */
 do_action( 'vibrantlife_body_open' );
 ?>
