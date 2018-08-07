@@ -14,7 +14,7 @@ defined( 'ABSPATH' ) || die();
 <?php // Edit below here ?>
 
 <!-- Google Tag Manager Pixel -->
-<script async src='https://tag.simpli.fi/sifitag/494a1000-0941-0136-44df-067f653fa718'></script>
+<script async src='https://tag.simpli.fi/sifitag/026e02b0-7beb-0136-4d20-067f653fa718'></script>
 <!-- End Google Tag Manager Pixel -->
 
 <?php // Edit above here ?>
