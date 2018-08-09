@@ -11,3 +11,4 @@ require_once( 'custom-meta/page.php' );
 require_once( 'custom-meta/home.php' );
 require_once( 'custom-meta/template-contact.php' );
 require_once( 'custom-meta/template-resources.php' );
+require_once( 'custom-meta/template-landing-a.php' );

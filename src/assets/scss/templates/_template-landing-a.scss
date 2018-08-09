@@ -1,0 +1,17 @@
+body.page-template-landing-a {
+  .page {
+    @include xy-grid;
+  }
+
+  .landing-a-left {
+    @include breakpoint(medium) {
+      @include xy-cell(6);
+    }
+  }
+
+  .landing-a-right {
+    @include breakpoint(medium) {
+      @include xy-cell(6);
+    }
+  }
+}

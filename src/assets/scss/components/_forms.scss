@@ -1,0 +1,8 @@
+input[type="button"] {
+  @include button;
+}
+
+// Ninja Forms
+.submit-wrap input[type="button"] {
+  font-size: map-get($button-sizes, large);
+}
