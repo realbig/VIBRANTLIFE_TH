@@ -4,12 +4,16 @@ body.page-template-landing-a {
   }
 
   .landing-a-left {
+    @include xy-cell(full);
+
     @include breakpoint(medium) {
       @include xy-cell(6);
     }
   }
 
   .landing-a-right {
+    @include xy-cell(full);
+
     @include breakpoint(medium) {
       @include xy-cell(6);
     }
