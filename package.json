@@ -1,7 +1,7 @@
 {
   "name": "vibrantlifetheme",
   "title": "VibrantLifeTheme",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Vibrant Life theme.",
   "homepage": "https://github.com/realbig/VIBRANTLIFE_TH",
   "main": "gulpfile.js",
