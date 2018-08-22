@@ -37,7 +37,7 @@ if ( ! function_exists( 'foundationpress_top_bar_r' ) ) {
 					<?php get_search_form(); ?>
 				</div>
 
-				<a href="https://www.facebook.com/VLSuperiorTownship/" aria-label="Facebook" target="_blank" title="Facebook" class="nav-icon facebook-link">
+				<a href="https://www.facebook.com/vibrantlifesuperior/" aria-label="Facebook" target="_blank" title="Facebook" class="nav-icon facebook-link">
 					<span class="footer-social-icon fa fa-facebook"></span>
 				</a>
                 
